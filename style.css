@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI";
+}
+
+body {
+    background: #f1f5f9;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    padding: 18px;
+}
+
+.subtitle {
+    font-size: 14px;
+}
+
+/* STEPS */
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.step {
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 6px;
+}
+
+.step.active {
+    background: white;
+    color: #2563eb;
+}
+
+/* CONTAINER */
+.container {
+    width: 600px;
+    margin: 30px auto;
+}
+
+/* SPLIT */
+.split {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* CARD */
+.card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* INPUT */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+/* IMAGE */
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8fafc;
+}
+
+.image-box img {
+    max-width: 100%;
+    max-height: 250px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+th {
+    background: #2563eb;
+    color: white;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+/* GRAPH */
+#graph {
+    height: 420px;
+    margin-top: 10px;
+    background: #f8fafc;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NFA → DFA Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>NFA → DFA Converter</h1>
+    <p class="subtitle">Automata Tools</p>
+
+    <div class="steps">
+        <div class="step active">1. Input</div>
+        <div class="step">2. Transition</div>
+        <div class="step">3. Result</div>
+    </div>
+</div>
+
+<div class="container split">
+
+    <div class="left card">
+        <h2>Automaton Input</h2>
+
+        <label>States</label>
+        <input id="states" placeholder="q0,q1,q2">
+
+        <label>Alphabet</label>
+        <input id="alphabet" placeholder="a,b,ε">
+
+        <label>Start State</label>
+        <input id="start" placeholder="q0">
+
+        <label>Final States</label>
+        <input id="final" placeholder="q2">
+
+        <button onclick="saveAndNext()">Continue</button>
+    </div>
+
+    <div class="right card image-box">
+        <img src="images/nfa.png">
+    </div>
+
+</div>
+
+<script>
+function saveAndNext() {
+    localStorage.setItem("states", states.value);
+    localStorage.setItem("alphabet", alphabet.value);
+    localStorage.setItem("start", start.value);
+    localStorage.setItem("final", final.value);
+    window.location.href = "transitions.html";
+}
+</script>
+
+</body>
+</html>

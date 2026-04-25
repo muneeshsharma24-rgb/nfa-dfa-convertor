@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transitions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="header">
+    <h1>NFA → DFA Converter</h1>
+    <p class="subtitle">Automata Tools</p>
+
+    <div class="steps">
+        <div class="step">1. Input</div>
+        <div class="step active">2. Transition</div>
+        <div class="step">3. Result</div>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Enter Transitions</h2>
+    <div id="transitionsBox"></div>
+
+    <button onclick="goBack()">Back</button>
+    <button onclick="saveTransitions()">Next</button>
+</div>
+
+<script>
+let states = (localStorage.getItem("states") || "").split(",");
+let alphabet = (localStorage.getItem("alphabet") || "").split(",");
+
+let box = document.getElementById("transitionsBox");
+
+states.forEach(s => {
+    alphabet.forEach(a => {
+        let id = s + "_" + a;
+        box.innerHTML += `
+            <label>(${s}, ${a})</label>
+            <input id="${id}" placeholder="q1,q2"><br>
+        `;
+    });
+});
+
+function saveTransitions() {
+    let transitions = {};
+
+    states.forEach(s => {
+        alphabet.forEach(a => {
+            transitions[s + "_" + a] = document.getElementById(s + "_" + a).value;
+        });
+    });
+
+    localStorage.setItem("transitions", JSON.stringify(transitions));
+    window.location.href = "result.html";
+}
+
+function goBack() {
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>
